@@ -1,10 +1,15 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
+  HttpCode,
   Param,
+  Patch,
   Post,
+  Put,
   Query,
+  Res,
   UseGuards,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
@@ -31,5 +36,23 @@ export class TradesController {
   async findOneTrade(@Param('id') id: string) {
     //convert to number and send to service.
     return this.tradesService.fetchOneTrade(+id);
+  }
+
+  @Delete(':id')
+  @HttpCode(405)
+  handleDelete() {
+    return 'Method Not Allowed';
+  }
+
+  @Put(':id')
+  @HttpCode(405)
+  handlePut(): string {
+    return 'Method Not Allowed';
+  }
+
+  @Patch(':id')
+  @HttpCode(405)
+  handlePatch() {
+    return 'Method Not Allowed';
   }
 }
