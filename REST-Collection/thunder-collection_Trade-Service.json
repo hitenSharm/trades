@@ -1,0 +1,112 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Trade-Service",
+    "collectionId": "6d644008-fc33-4b9b-b6b6-091acd235445",
+    "dateExported": "2024-09-18T10:09:31.352Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9177d612-0b6e-4648-b172-9de2ef7c0543",
+            "colId": "6d644008-fc33-4b9b-b6b6-091acd235445",
+            "containerId": "",
+            "name": "get trade with id",
+            "url": "http://localhost:3000/trades/4",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-09-18T10:08:47.522Z",
+            "modified": "2024-09-18T10:08:47.522Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiaGl0ZW5AZW1haWwuY29tIiwiaWF0IjoxNzI2NjUyOTU3LCJleHAiOjE3MjY2NTM1NTd9.pVkU0OvScFy0p6wplQMccPuodIMniYcy8ZRPs3o0NHM"
+            }
+        },
+        {
+            "_id": "6ad92b05-02f7-46cd-82d3-e44a8a922a30",
+            "colId": "6d644008-fc33-4b9b-b6b6-091acd235445",
+            "containerId": "",
+            "name": "get trades",
+            "url": "http://localhost:3000/trades",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-09-18T10:08:52.661Z",
+            "modified": "2024-09-18T10:08:52.661Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "type",
+                    "value": "sell",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "user_id",
+                    "value": "23",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiaGl0ZW5AZW1haWwuY29tIiwiaWF0IjoxNzI2NjUyOTU3LCJleHAiOjE3MjY2NTM1NTd9.pVkU0OvScFy0p6wplQMccPuodIMniYcy8ZRPs3o0NHM"
+            }
+        },
+        {
+            "_id": "29eaf409-501d-4367-9c0a-c08dbe26b236",
+            "colId": "6d644008-fc33-4b9b-b6b6-091acd235445",
+            "containerId": "",
+            "name": "create trade",
+            "url": "http://localhost:3000/trades",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-09-18T10:08:56.403Z",
+            "modified": "2024-09-18T10:08:56.403Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n\"type\": \"sell\",\r\n\"user_id\": 2,\r\n\"symbol\": \"NIFTY\",\r\n\"shares\": 30,\r\n\"price\": 134\r\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiaGl0ZW5AZW1haWwuY29tIiwiaWF0IjoxNzI2NjUyOTU3LCJleHAiOjE3MjY2NTM1NTd9.pVkU0OvScFy0p6wplQMccPuodIMniYcy8ZRPs3o0NHM"
+            }
+        },
+        {
+            "_id": "8cd72fa1-9681-4c41-9657-4123ded2e850",
+            "colId": "6d644008-fc33-4b9b-b6b6-091acd235445",
+            "containerId": "",
+            "name": "user login",
+            "url": "http://localhost:3000/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-09-18T10:09:00.275Z",
+            "modified": "2024-09-18T10:09:00.275Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"hiten5@email.com\",\n  \"password\":\"12345\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "35eca10e-8b51-4f48-9831-7387f9ebd8ed",
+            "colId": "6d644008-fc33-4b9b-b6b6-091acd235445",
+            "containerId": "",
+            "name": "create user",
+            "url": "http://localhost:3000/auth/sign-up",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-09-18T10:09:05.516Z",
+            "modified": "2024-09-18T10:09:05.516Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"hiten5@email.com\",\n  \"password\":\"12345\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "3zQ-DvbwF32Xa2NeakUyDATsJQUP67emo1lxF8q_RDmE9TKaEoZcRH1QiIgeU_a7FLu_LQHxf_Lo6qNFW1fZgg"
+}
