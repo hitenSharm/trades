@@ -15,7 +15,7 @@
 ## Tech Stack
 
 - **NestJS**: A Node.js framework for building scalable server-side applications.
-- **Supabase**: Backend-as-a-service (BaaS) platform for handling database and authentication.
+- **Supabase**: Backend-as-a-service (BaaS) platform for handling database and authentication. Uses SQL.
 - **JWT**: JSON Web Token used for securely transmitting information.
 - **bcrypt**: Library used for hashing passwords.
 
