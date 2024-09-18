@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  ConflictException,
   HttpStatus,
   Injectable,
   UnauthorizedException,
@@ -16,19 +17,34 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
+  async emailExists(email: string): Promise<any> {
+    const { data, error } = await this.supabaseService
+      .getSupaClient()
+      .from('users')
+      .select('*')
+      .eq('email', email)
+      .single();
+
+    if (data) return data;
+
+    return null;
+  }
+
   async signupUser(createUserDTO: UserDTO) {
     const { email, password } = createUserDTO;
 
+    if (await this.emailExists(email)) {
+      throw new ConflictException('Email already exists');
+    }
+
     const hashedPwd = await bcrypt.hash(password, 10);
 
-    const { data, error } = await this.supabaseService
+    const { error } = await this.supabaseService
       .getSupaClient()
       .from('users')
       .insert([{ email, password: hashedPwd }]);
 
     if (error) {
-      console.log(error);
-
       throw new Error('Sign up could not happen');
     }
 
@@ -42,16 +58,7 @@ export class AuthService {
     const { email, password } = loginUserDTO;
 
     //validate the email.
-    const { data, error } = await this.supabaseService
-      .getSupaClient()
-      .from('users')
-      .select('*')
-      .eq('email', email)
-      .single();
-
-    if (error) {
-      throw new Error('There was an issue in finding the email!');
-    }
+    const data = await this.emailExists(email);
 
     if (!data) {
       throw new BadRequestException('Invalid user, email not found');
