@@ -40,6 +40,8 @@ You can import the collection of REST api for personal testing.
 Please make sure that Supabase API keys and DB url is used!
 JWT secret is hardcoded but can be taken from the env too if required.
 
+PostgreSQL was used for DB as it is generally a better idea to use a SQL based DB for financial related data items. In this particular scenario mongo would have also been fine.
+
 Env variables used:
 
 ```
